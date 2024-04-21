@@ -1,0 +1,30 @@
+{
+  "name": "sit725-2023-t1-prac4",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "description": "sit725-2023-t1-prac4",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha --reporter spec",
+    "start": "node server.js"
+  },
+  "author": "Sanju Nimesha",
+  "license": "ISC",
+  "dependencies": {
+    "@mui/icons-material": "^5.15.14",
+    "body-parser": "^1.20.2",
+    "chai": "^4.3.4",
+    "chai-http": "^4.4.0",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "extension": "^0.2.2",
+    "mocha": "^10.4.0",
+    "mongodb": "^6.5.0",
+    "monodb": "^1.5.1",
+    "request": "^2.88.2",
+    "save": "2.9.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.5"
+  }
+}

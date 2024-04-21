@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale-1">
+
+        <title>SIT725 Prac 2</title>
+        <meta name="description" content="basic template for SIT725 Prac 2">
+        <meta name="author" content="SIT725">
+        <link rel="stylesheet" href="./css/style.css">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+  <!-- Include Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper navbar-size">
+              <a href="#" class="brand-logo"><img width="60" height="65" class="user-image-size" src="./images/user_image.jpg" /></a>
+              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="https://www.linkedin.com/in/sanju-nimesha-394ab8207/">LinkedIn</a></li>
+              </ul>
+            </div>
+          </nav>
+          
+    <main>
+      <h4 class="center ">Welcome SIT725- Apply Software enginerring</h4>
+      <p  class="center ">This is demo application that tries to use a few components from materialize and throught this practical we try
+      to have some fun with materialize and its components
+      </p>
+        <div class = "container center ">
+            <img width="200" height="200"  src="./images/live demo_img.jpg" alt="demo">
+        </div>
+        <div class="but1 center-align">
+            <!-- Trigger/Open The Modal -->
+<button class="waves-effect waves-light btn "  id="myBtn"><i class="material-icons left">auto_fix_high</i>Click Me!</button>
+        </div>  
+        
+        <div class="center-align"  id="cardContainer"></div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form class="col s12" action="/api/formdetails" method="POST" id="myForm">
+     <div class="row">
+      <div class="input-field col s5">
+        <input placeholder="placeholder" id="first_name" type="text" class="validate">
+        <label for="first_name">First Name</label>
+      </div>
+      <div class="input-field col s5">
+      <input id="last_name" type="text" class="validate">
+      <label for="last_name">Last Name</label>
+      </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+         <input id="password" type="password" class="validate">
+         <label for="password">password</label>
+        </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+           <input id="email" type="email" class="validate">
+           <label for="email" >Email</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12 center-align">
+      <button class="waves-effect waves-light btn"  type="button" onclick="submitForm()">Submit</button>
+     </div>
+    </div>
+      
+      
+  </form>
+  </div>
+
+</div>
+
+</div>
+</main>   
+<script>
+  function submitForm() {
+    const formData = {
+      first_name: document.getElementById('first_name').value,
+      last_name: document.getElementById('last_name').value,
+      email: document.getElementById('email').value,
+      password: document.getElementById('password').value
+    };
+
+    fetch('/api/formdetails', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => {
+      if (response.ok) {
+        console.log('Form data submitted successfully');
+      } else {
+        console.error('Failed to submit form data');
+      }
+    })
+    .catch(error => {
+      console.error('Error submitting form data:', error);
+    });
+  }
+</script>
+       <!-- Add jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Add Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Add scripts.js -->
+    <script src="./js/script.js"></script>
+    </body>
+</html>
